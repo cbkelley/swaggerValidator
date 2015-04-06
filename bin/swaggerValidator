@@ -1,0 +1,31 @@
+#!/usr/bin/env node
+
+var _ = require('lodash'),
+	color = require('cli-color'),
+	commandLine = require('commander'),
+	params = getCommandLineArguments(),
+	SwaggerValidator = require('../index.js'),
+	swaggerValidator = new SwaggerValidator(params);
+
+swaggerValidator.run(function(err, documents){
+	if(err){ fail('Error generating tests: '+err); }
+	console.log('Swagger Validation Complete');
+});
+
+
+function fail(message){
+	console.error(color.red('Error: ' + message));
+	process.exit(1);
+}
+
+function getCommandLineArguments(){
+
+	commandLine
+		.option('-c, --config <path to config file>', 'Location of .json file. Defaults to ./config.json')
+		.option('-s, --swagger <path to swagger document location>', 'location where swagger documentation can be found')
+		.parse(process.argv);
+
+	return commandLine;
+}
+
+

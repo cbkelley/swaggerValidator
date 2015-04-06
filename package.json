@@ -1,0 +1,39 @@
+{
+  "name": "swaggerValidator",
+  "version": "0.0.1",
+  "description": "This app will verify that all elements of uploaded swagger are match with the swagger standard.",
+  "contributors": [
+    "Jeff Marquez <jm.lue.42@gmail.com>",
+    "Allen Clayton <ajclayton@gmail.com>",
+    "Christopher Kelley <cbkelley717@gmail.com>"
+  ],
+  "main": "index.js",
+  "bin": "./bin/swaggerValidator",
+  "egines": {
+    "node": ">=0.10.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "ssh://git@devops-tools.pearson.com/grph/swaggervalidator.git"
+  },
+  "dependencies": {
+    "async": "0.9.x",
+    "cli-color": "*",
+    "commander": "*",
+    "joi": "^4.6.2",
+    "lodash": "2.x.x",
+    "request": "2.x.x",
+    "swagger-tools": "^0.6.12"
+  },
+  "keywords": [
+    "api",
+    "test",
+    "testing",
+    "swagger",
+    "validator",
+    "lint"
+  ]
+}
