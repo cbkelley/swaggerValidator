@@ -67,5 +67,6 @@ SwaggerValidator is built on _node.js_ and makes use of these modules:
 * request - apache
 * cli-color - MIT
 * commander - MIT
+* swagger-tools - MIT
 
 
