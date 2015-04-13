@@ -10,8 +10,16 @@ module.exports = swaggerValidator = function(options){
 	this.run = function(callback){
 		apiDefCrawler.getDefs(options.swagger, function(err, docs, root){
 			lintReporter(docs, root, function(){
-				callback(null, docs);
+				callback(null);
 			});
 		});
 	};
+
+	this.validate = function(swaggerEndpoint, callback){
+		apiDefCrawler.getDefs(swaggerEndpoint, function(err, docs, root){
+			lintReporter(docs, root, function(){
+				callback(null);
+			});
+		});
+	}
 };
