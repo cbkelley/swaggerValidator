@@ -1,8 +1,7 @@
 //var stuff
 var apiDefCrawler = require('./lib/apiDefCrawler.js'),
 	linter = require('./lib/linter.js'),
-	_ = require('lodash'),
-	async = require('async');
+	_ = require('lodash');
 
 
 module.exports = swaggerValidator = function(options){
