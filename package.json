@@ -24,9 +24,13 @@
     "cli-color": "*",
     "commander": "*",
     "joi": "^4.6.2",
+    "json-refs": "^0.1.4",
     "lodash": "2.x.x",
     "request": "2.x.x",
-    "swagger-tools": "^0.6.12"
+    "spark-md5": "0.0.5",
+    "swagger-converter": "^0.1.0",
+    "traverse": "^0.6.6",
+    "z-schema": "^3.3.2"
   },
   "keywords": [
     "api",

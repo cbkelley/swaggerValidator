@@ -1,5 +1,3 @@
-#!/usr/bin/env node
-
 var _ = require('lodash'),
 	color = require('cli-color'),
 	commandLine = require('commander'),
@@ -7,7 +5,7 @@ var _ = require('lodash'),
 	SwaggerValidator = require('../index.js'),
 	swaggerValidator = new SwaggerValidator(params);
 
-swaggerValidator.run(function(err, documents){
+swaggerValidator.run(function(err){
 	if(err){ fail('Error generating tests: '+err); }
 	console.log('Swagger Validation Complete');
 });

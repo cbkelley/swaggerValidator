@@ -1,6 +1,6 @@
 //var stuff
 var apiDefCrawler = require('./lib/apiDefCrawler.js'),
-	swaggerLinter = require('./lib/swaggerLinter.js'),
+	lintReporter = require('./lib/lintReporter.js'),
 	_ = require('lodash'),
 	async = require('async');
 
@@ -9,9 +9,17 @@ module.exports = swaggerValidator = function(options){
 
 	this.run = function(callback){
 		apiDefCrawler.getDefs(options.swagger, function(err, docs, root){
-			swaggerLinter(docs, root, function(){
-				callback(null, docs);
+			lintReporter(docs, root, function(){
+				callback(null);
 			});
 		});
 	};
+
+	this.validate = function(swaggerEndpoint, callback){
+		apiDefCrawler.getDefs(swaggerEndpoint, function(err, docs, root){
+			lintReporter(docs, root, function(){
+				callback(null);
+			});
+		});
+	}
 };
