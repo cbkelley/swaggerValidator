@@ -1,6 +1,6 @@
 {
   "name": "swaggerValidator",
-  "version": "0.0.1",
+  "version": "0.2.0",
   "description": "This app will verify that all elements of uploaded swagger are match with the swagger standard.",
   "contributors": [
     "Jeff Marquez <jm.lue.42@gmail.com>",

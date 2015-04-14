@@ -21,6 +21,8 @@ function getCommandLineArguments(){
 	commandLine
 		.option('-c, --config <path to config file>', 'Location of .json file. Defaults to ./config.json')
 		.option('-s, --swagger <path to swagger document location>', 'location where swagger documentation can be found')
+		.option('-r, --reporter <indicate which reporter you would like to use>', 'indicate which reporter you would ' +
+		'like to use, currently only \'conosle\' is supported')
 		.parse(process.argv);
 
 	return commandLine;
