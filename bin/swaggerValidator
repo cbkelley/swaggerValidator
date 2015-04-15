@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+
 var _ = require('lodash'),
 	color = require('cli-color'),
 	commandLine = require('commander'),
