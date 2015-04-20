@@ -22,7 +22,7 @@ module.exports = swaggerValidator = function(options){
 		});
 	};
 
-	this.validate = function(swaggerEndpoint, reporter, callback){
+	this.fetchAndValidate = function(swaggerEndpoint, reporter, callback){
 		apiDefCrawler.getDefs(swaggerEndpoint, function(err, docs, root){
 			linter(docs, root, function(result){
 				if (_.isString(reporter)){
@@ -41,4 +41,10 @@ module.exports = swaggerValidator = function(options){
 			});
 		});
 	}
+
+	this.validate = function(docs, root, callback){
+		linter(docs, root, function(result){
+			callback(result);
+		});
+	};
 };
