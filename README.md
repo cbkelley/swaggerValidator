@@ -22,6 +22,23 @@ Basic Use
 Execute swagger output
 
     $ swaggerValidator -s <swagger documentation url>
+    
+The Linter can also be used programatically two ways.
+
+    SwaggerValidator = require("swaggerValidator");
+    swaggerValidator = new SwaggerValidator();
+
+    //fetch and validate swagger via endpoint.  'console' is optional and can be left blank if 
+    //you'd like to refrain from having the reporter dump to the console. 
+    swaggerValidator.fetchAndValidate('www.someDomain.com/api-docs', 'console', callback(result){
+        //do stuff here
+    });
+    
+    //pass swagger docs directly to the linter
+    swaggerValidator.fetchAndValidate(docs, root, callback(result){
+        //do stuff here
+    });
+
 
 Getting Help
 ------------
