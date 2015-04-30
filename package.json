@@ -1,12 +1,13 @@
 {
   "name": "swaggerValidator",
-  "version": "0.2.1",
+  "version": "1.0.0",
   "description": "This app will verify that all elements of uploaded swagger are match with the swagger standard.",
   "contributors": [
     "Jeff Marquez <jm.lue.42@gmail.com>",
     "Allen Clayton <ajclayton@gmail.com>",
     "Christopher Kelley <cbkelley717@gmail.com>"
   ],
+  "license": "GNU",
   "main": "index.js",
   "bin": "./bin/swaggerValidator",
   "egines": {
@@ -38,6 +39,15 @@
     "testing",
     "swagger",
     "validator",
-    "lint"
-  ]
+    "lint",
+    "linting",
+    "rest"
+  ],
+  "bugs": {
+    "url": "https://github.com/cbkelley/swaggerValidator/issues"
+  },
+  "homepage": "https://github.com/cbkelley/swaggerValidator",
+  "publishConfig": {
+    "registry": "http://registry.npmjs.org"
+  }
 }
