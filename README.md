@@ -15,17 +15,14 @@ Currently SwaggerValidator is only available on the Pearson NPM server. Install 
 
 Basic Use
 ---------
-### Setting up the config
-    pending
-
 ### Execute the compliance validation (linting)
 Execute swagger output
 
-    $ swaggerValidator -s <swagger documentation url>
+    $ swagger-validator -s <swagger documentation url>
     
 The Linter can also be used programatically two ways.
 
-    SwaggerValidator = require("swaggerValidator");
+    SwaggerValidator = require("swagger-validator");
     swaggerValidator = new SwaggerValidator();
 
     //fetch and validate swagger via endpoint.  'console' is optional and can be left blank if 
