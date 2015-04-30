@@ -10,7 +10,7 @@
   "license": "GNU",
   "main": "index.js",
   "bin": "./bin/swaggerValidator",
-  "egines": {
+  "engines": {
     "node": ">=0.10.0"
   },
   "scripts": {
@@ -18,7 +18,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "ssh://git@devops-tools.pearson.com/grph/swaggervalidator.git"
+    "url": "git@github.com:cbkelley/swaggerValidator.git"
   },
   "dependencies": {
     "async": "0.9.x",
