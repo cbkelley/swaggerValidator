@@ -5,9 +5,9 @@
 var linter = require('./../lib/specs');
 
 module.exports = function (swaggerDoc, result) {
-	if (typeof result !== undefined) {
+	if (typeof result !== "undefined") {
 		console.log('Provided documentation is not Swagger Compliant:');
-		if (result.errors.length > 0) {
+		if (result.errors && result.errors.length > 0) {
 			console.log('Errors\n------');
 			result.errors.forEach(function (err) {
 				console.log('#/' + err.path.join('/') + ': ' + err.message);
@@ -15,7 +15,7 @@ module.exports = function (swaggerDoc, result) {
 			console.log('Errors End \n------');
 		}
 
-		if (result.warnings.length > 0) {
+		if (result.warnings && result.warnings.length > 0) {
 			console.log('Warnings\n------');
 			result.warnings.forEach(function (warn) {
 				console.log('#/' + warn.path.join('/') + ': ' + warn.message);

@@ -1,0 +1,136 @@
+{
+	"swaggerVersion": "1.2",
+	"resourcePath": "/users",
+	"basePath": "https://localhost:3000",
+	"produces": [
+		"application/json"
+	],
+	"apiVersion": "1.0.0",
+	"apis": [
+		{
+			"path": "/users",
+			"description": "users collection routes",
+			"operations": [
+				{
+					"method": "GET",
+					"authorizations": {},
+					"summary": "Get a list of users",
+					"nickname": "get_users",
+					"responseMessages": [
+						{
+							"code": 401,
+							"message": "Unauthorized"
+						},
+						{
+							"code": 500,
+							"message": "Internal Server Error"
+						}
+					],
+					"parameters": [
+						{
+							"type": "string",
+							"required": true,
+							"name": "x-authorization",
+							"paramType": "header"
+						},
+						{
+							"type": "string",
+							"name": "correlation-id",
+							"paramType": "header"
+						}
+					],
+					"type": "get_users_GET_response",
+					"produces": [
+						"application/json"
+					]
+				},
+				{
+					"method": "POST",
+					"authorizations": {},
+					"summary": "Create a new user",
+					"nickname": "post_users",
+					"responseMessages": [
+						{
+							"code": 400,
+							"message": "Bad Request"
+						},
+						{
+							"code": 401,
+							"message": "Unauthorized"
+						},
+						{
+							"code": 500,
+							"message": "Internal Server Error"
+						}
+					],
+					"consumes": [
+						"application/json"
+					],
+					"parameters": [
+						{
+							"type": "string",
+							"required": true,
+							"name": "x-authorization",
+							"paramType": "header"
+						},
+						{
+							"type": "string",
+							"name": "correlation-id",
+							"paramType": "header"
+						},
+						{
+							"type": "POST_userRequest",
+							"required": true,
+							"name": "body",
+							"paramType": "body"
+						}
+					],
+					"type": "userResponse",
+					"produces": [
+						"application/json"
+					]
+				}
+			]
+		}
+	],
+	"models": {
+		"userResponse": {
+			"id": "userResponse",
+			"properties": {
+				"id": {
+					"type": "integer"
+				},
+				"name": {
+					"type": "string"
+				}
+			},
+			"required": [
+				"id",
+				"name"
+			]
+		},
+		"get_users_GET_response": {
+			"id": "get_users_GET_response",
+			"properties": {
+				"users": {
+					"type": "array",
+					"items": {
+						"$ref": "userResponse"
+					}
+				}
+			},
+			"required": []
+		},
+		"POST_userRequest": {
+			"id": "POST_userRequest",
+			"properties": {
+				"name": {
+					"type": "string"
+				}
+			},
+			"required": [
+				"name"
+			]
+		}
+	}
+}

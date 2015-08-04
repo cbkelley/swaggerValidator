@@ -1,6 +1,6 @@
 //var stuff
 var apiDefCrawler = require('./lib/apiDefCrawler.js'),
-	linter = require('./lib/linter.js'),
+	linter = require('./lib/linterHandler.js'),
 	_ = require('lodash');
 
 
@@ -24,7 +24,7 @@ module.exports = swaggerValidator = function(options){
 
 	this.fetchAndValidate = function(swaggerEndpoint, reporter, callback){
 		apiDefCrawler.getDefs(swaggerEndpoint, function(err, docs, root){
-			linter(docs, root, function(result){
+			linter(root, docs, function(err, result){
 				if (_.isString(reporter)){
 					try {
 						var report = require('./reporters/' + reporter);
@@ -42,8 +42,8 @@ module.exports = swaggerValidator = function(options){
 		});
 	}
 
-	this.validate = function(docs, root, callback){
-		linter(docs, root, function(result){
+	this.validate = function(root, docs, callback){
+		linter(root, docs, function(result){
 			callback(result);
 		});
 	};

@@ -11,7 +11,7 @@
   "main": "index.js",
   "bin": "./bin/swaggerValidator",
   "engines": {
-    "node": ">=0.10.0"
+    "node": ">=0.10.38"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -26,8 +26,10 @@
     "commander": "*",
     "joi": "^4.6.2",
     "json-refs": "^0.1.4",
-    "lodash": "2.x.x",
+    "lodash": "^2.4.2",
     "request": "2.x.x",
+    "rewire": "^2.3.4",
+    "should": "^7.0.2",
     "spark-md5": "0.0.5",
     "swagger-converter": "^0.1.0",
     "traverse": "^0.6.6",

@@ -1,0 +1,136 @@
+{
+    "swaggerVersion": "1.2",
+    "resourcePath": "/pets",
+    "basePath": "https://localhost:3000",
+    "produces": [
+        "application/json"
+    ],
+    "apiVersion": "1.0.0",
+    "apis": [
+        {
+            "path": "/pets",
+            "description": "pet colletctions routes",
+            "operations": [
+                {
+                    "method": "GET",
+                    "authorizations": {},
+                    "summary": "Get a list of known pets",
+                    "nickname": "get_pets",
+                    "responseMessages": [
+                        {
+                            "code": 401,
+                            "message": "Unauthorized"
+                        },
+                        {
+                            "code": 500,
+                            "message": "Internal Server Error"
+                        }
+                    ],
+                    "parameters": [
+                        {
+                            "type": "string",
+                            "required": true,
+                            "name": "x-authorization",
+                            "paramType": "header"
+                        },
+                        {
+                            "type": "string",
+                            "name": "correlation-id",
+                            "paramType": "header"
+                        }
+                    ],
+                    "type": "get_pets_GET_response",
+                    "produces": [
+                        "application/json"
+                    ]
+                },
+                {
+                    "method": "POST",
+                    "authorizations": {},
+                    "summary": "Create a new pet",
+                    "nickname": "post_pets",
+                    "responseMessages": [
+                        {
+                            "code": 400,
+                            "message": "Bad Request"
+                        },
+                        {
+                            "code": 401,
+                            "message": "Unauthorized"
+                        },
+                        {
+                            "code": 500,
+                            "message": "Internal Server Error"
+                        }
+                    ],
+                    "consumes": [
+                        "application/json"
+                    ],
+                    "parameters": [
+                        {
+                            "type": "string",
+                            "required": true,
+                            "name": "x-authorization",
+                            "paramType": "header"
+                        },
+                        {
+                            "type": "string",
+                            "name": "correlation-id",
+                            "paramType": "header"
+                        },
+                        {
+                            "type": "POST_petRequest",
+                            "required": true,
+                            "name": "body",
+                            "paramType": "body"
+                        }
+                    ],
+                    "type": "petResponse",
+                    "produces": [
+                        "application/json"
+                    ]
+                }
+            ]
+        }
+    ],
+    "models": {
+        "petResponse": {
+            "id": "petResponse",
+            "properties": {
+                "id": {
+                    "type": "integer"
+                },
+                "name": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "id",
+                "name"
+            ]
+        },
+        "get_pets_GET_response": {
+            "id": "get_pets_GET_response",
+            "properties": {
+                "pets": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "petResponse"
+                    }
+                }
+            },
+            "required": []
+        },
+        "POST_petRequest": {
+            "id": "POST_petRequest",
+            "properties": {
+                "name": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "name"
+            ]
+        }
+    }
+}
