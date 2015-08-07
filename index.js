@@ -53,7 +53,7 @@ module.exports = swaggerValidator = function(options){
 			callback = typeof defs === 'function' ? callback : function(){};
 		}
 		linter(root, defs, function(err, result){
-			callback(result);
+			callback(err, result);
 		});
 	};
 };
