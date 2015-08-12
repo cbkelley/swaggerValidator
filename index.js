@@ -50,7 +50,7 @@ module.exports = swaggerValidator = function(options){
 
 	this.validate = function(root, defs, callback){
 		if(typeof callback !== 'function'){
-			callback = typeof defs === 'function' ? callback : function(){};
+			callback = typeof defs === 'function' ? defs : function(){};
 		}
 		linter(root, defs, function(err, result){
 			callback(err, result);
