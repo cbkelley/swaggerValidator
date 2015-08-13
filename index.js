@@ -26,9 +26,6 @@ module.exports = swaggerValidator = function(options){
 	};
 
 	this.fetchAndValidate = function(swaggerEndpoint, reporter, callback){
-		if(typeof callback !== 'function'){
-			callback = typeof defs === 'function' ? callback : function(){};
-		}
 		apiDefCrawler.getDefs(swaggerEndpoint, function(err, root, defs){
 			linter(root, defs, function(err, result){
 				if (_.isString(reporter)){
@@ -46,7 +43,7 @@ module.exports = swaggerValidator = function(options){
 				}
 			});
 		});
-	}
+	};
 
 	this.validate = function(root, defs, callback){
 		if(typeof callback !== 'function'){
