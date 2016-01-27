@@ -11,7 +11,7 @@ You'll need to have [nodejs](http://nodejs.org/download/) installed before insta
 
 Currently SwaggerValidator is only available on the Pearson NPM server. Install with npm:
 
-    $ npm install swaggerValidator
+    $ npm install swagger-validator
 
 Basic Use
 ---------
